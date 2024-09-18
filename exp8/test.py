@@ -17,7 +17,18 @@ padding_type = 'post'
 x_train = pad_sequences(x_train, maxlen=max_length, padding=padding_type, truncating=trunc_type)
 x_test = pad_sequences(x_test, maxlen=max_length, padding=padding_type, truncating=trunc_type)
 
+# 2. Build the RNN Model
+embedding_dim = 16
 
+model = Sequential([
+    Embedding(vocab_size, embedding_dim),
+    LSTM(128, return_sequences=True),
+    LSTM(64),
+    Dropout(0.5),
+    Dense(128, activation='relu'),
+    Dense(64, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
 
 # Explicitly build the model by calling build() with input shape
 model.build(input_shape=(None, max_length))
