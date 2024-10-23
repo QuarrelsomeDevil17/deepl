@@ -1,8 +1,8 @@
 import tensorflow as tf
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.datasets import imdb
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout
+from tensorflow.keras.preprocessing.sequence import pad_sequences  #type: ignore
+from tensorflow.keras.datasets import imdb #type: ignore
+from tensorflow.keras.models import Sequential #type: ignore
+from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout #type: ignore
 
 
 # 1. Load and Preprocess the IMDB Dataset
